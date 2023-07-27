@@ -166,14 +166,14 @@ public class RationalNumber implements Comparable<RationalNumber>
 	public int compareTo(RationalNumber value) 
 	{
 		double f1 = ((float)this.numerator/this.denominator); 
-		System.out.println(f1);
 		double f2 = ((float)value.numerator/value.denominator);
-		System.out.println(f2);
 		if (Math.abs(f1-f2)<threshold)
 		{
 			return 0;
 		}
-		else return 1;
+		if (f1-f2 < 0)
+			return 1;
+		else return -1;
 	}//end compareTo
 }
 	
